@@ -25,3 +25,9 @@ payload:
   - DOMAIN-SUFFIX,bandwagonhost.com
   - DOMAIN-SUFFIX,ultramobile.com
   - DOMAIN-SUFFIX,hlive.io
+  - DOMAIN-SUFFIX,ubi.com
+  - DOMAIN-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com
+  - DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
+  - DOMAIN-SUFFIX,ubisoft.com
+  - DOMAIN-SUFFIX,uplay.com
+  - DOMAIN,uplaypc-s-ubisoft.cdn.ubi.com
