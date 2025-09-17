@@ -32,5 +32,7 @@ payload:
   - DOMAIN-SUFFIX,uplay.com
   - DOMAIN-SUFFIX,uplaypc-s-ubisoft.cdn.ubi.com
   - DOMAIN-SUFFIX,gitbook.io
+  - DOMAIN-SUFFIX,openstreetmap.org
+
 
 
