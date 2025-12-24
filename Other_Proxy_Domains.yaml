@@ -35,6 +35,8 @@ payload:
   - DOMAIN-SUFFIX,openstreetmap.org
   - DOMAIN-SUFFIX,metacubex.one
   - DOMAIN-SUFFIX,sagernet.org
+  - DOMAIN-SUFFIX,you.com
+
 
 
 
