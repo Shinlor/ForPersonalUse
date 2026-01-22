@@ -4,6 +4,7 @@
 # Merges two YAML files preserving conflicting values from both files
 # When the same key exists with different values, both are kept
 # Usage: ./yaml_merge.sh base.yaml merge.yaml [output.yaml]
+# Requirements:Python 3 PyYAML: pip3 install pyyaml
 
 set -e
 
