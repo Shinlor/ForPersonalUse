@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# List to JSON Merge Script (Non-Overwriting)
+# List to JSON Merge Script (Non-Overwriting, Case-Insensitive, All Hierarchies)
 # Merges a .list file into a JSON file preserving existing values
 # Each line in .list format: key,value
-# When key exists: keeps BOTH values (creates array)
+# Keys are converted to lowercase and matched across all JSON hierarchies
 # Usage: ./merge_list_json.sh input.list input.json [output.json]
 
 set -e
@@ -13,6 +13,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Check if jq is installed
@@ -33,18 +34,18 @@ if [ $# -lt 2 ]; then
     echo "  input.json   - JSON file to merge into"
     echo "  output.json  - Output JSON file (optional, defaults to merged.json)"
     echo ""
-    echo "Rules (Non-Overwriting Merge):"
+    echo "Rules (Non-Overwriting Merge with Lowercase):"
     echo "  - Each line in .list file: key,value"
-    echo "  - String before ',' becomes the key"
-    echo "  - String after ',' becomes the value"
+    echo "  - ALL keys converted to lowercase"
+    echo "  - Keys matched across ALL hierarchies in JSON"
     echo "  - If key exists with SAME value: keeps single value"
     echo "  - If key exists with DIFFERENT value: keeps BOTH as array"
     echo "  - If key doesn't exist: adds new key-value pair"
     echo ""
     echo "Example .list file:"
-    echo "  name,John"
-    echo "  age,30"
-    echo "  city,NYC"
+    echo "  Name,John       → name,John"
+    echo "  AGE,30          → age,30"
+    echo "  City,NYC        → city,NYC"
     exit 1
 fi
 
@@ -69,19 +70,24 @@ if ! jq empty "$JSON_FILE" 2>/dev/null; then
     exit 1
 fi
 
-echo -e "${YELLOW}Merging list into JSON (non-overwriting)...${NC}"
+echo -e "${YELLOW}Merging list into JSON (non-overwriting, lowercase, all hierarchies)...${NC}"
 echo -e "List file: ${GREEN}$LIST_FILE${NC}"
 echo -e "JSON file: ${GREEN}$JSON_FILE${NC}"
 echo -e "Output: ${GREEN}$OUTPUT_FILE${NC}"
 echo ""
 
-# Start with the base JSON
-cp "$JSON_FILE" "$OUTPUT_FILE"
+# First, convert all keys in JSON to lowercase
+echo -e "${CYAN}Step 1: Converting JSON keys to lowercase...${NC}"
+jq 'walk(if type == "object" then with_entries(.key |= ascii_downcase) else . end)' "$JSON_FILE" > "${OUTPUT_FILE}.tmp"
+mv "${OUTPUT_FILE}.tmp" "$OUTPUT_FILE"
 
 # Process each line of the list file
 LINE_COUNT=0
 MERGED_COUNT=0
 UPDATED_COUNT=0
+
+echo -e "${CYAN}Step 2: Processing list file...${NC}"
+echo ""
 
 while IFS= read -r line || [ -n "$line" ]; do
     # Skip empty lines
@@ -96,75 +102,19 @@ while IFS= read -r line || [ -n "$line" ]; do
         KEY="${BASH_REMATCH[1]}"
         VALUE="${BASH_REMATCH[2]}"
         
-        # Trim whitespace from key and value
-        KEY=$(echo "$KEY" | xargs)
+        # Trim whitespace and convert key to lowercase
+        KEY=$(echo "$KEY" | xargs | tr '[:upper:]' '[:lower:]')
         VALUE=$(echo "$VALUE" | xargs)
         
-        # Check if key exists in JSON
-        KEY_EXISTS=$(jq --arg key "$KEY" 'has($key)' "$OUTPUT_FILE")
+        # Find all paths where this key exists in the JSON (all hierarchies)
+        PATHS=$(jq -r --arg key "$KEY" '
+            path(.. | select(type == "object") | select(has($key))) | 
+            map(tostring) | 
+            join(".")
+        ' "$OUTPUT_FILE" 2>/dev/null | grep -v '^$' || echo "")
         
-        if [ "$KEY_EXISTS" = "true" ]; then
-            # Key exists - need to merge values
-            EXISTING_VALUE=$(jq --arg key "$KEY" '.[$key]' "$OUTPUT_FILE")
-            
-            # Determine if value is numeric
-            if [[ "$VALUE" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
-                NEW_VALUE="$VALUE"
-                VALUE_TYPE="number"
-            else
-                NEW_VALUE="\"$VALUE\""
-                VALUE_TYPE="string"
-            fi
-            
-            # Check if existing value equals new value
-            if [ "$VALUE_TYPE" = "string" ]; then
-                VALUE_MATCH=$(jq --arg key "$KEY" --arg val "$VALUE" '.[$key] == $val' "$OUTPUT_FILE")
-            else
-                VALUE_MATCH=$(jq --arg key "$KEY" --argjson val "$VALUE" '.[$key] == $val' "$OUTPUT_FILE")
-            fi
-            
-            if [ "$VALUE_MATCH" = "true" ]; then
-                # Same value - keep single value
-                echo -e "${BLUE}  Kept: ${NC}$KEY = $VALUE ${YELLOW}(same value)${NC}"
-            else
-                # Different value - merge into array
-                EXISTING_TYPE=$(jq --arg key "$KEY" '.[$key] | type' "$OUTPUT_FILE" | tr -d '"')
-                
-                if [ "$EXISTING_TYPE" = "array" ]; then
-                    # Already an array - check if value exists in array
-                    if [ "$VALUE_TYPE" = "string" ]; then
-                        IN_ARRAY=$(jq --arg key "$KEY" --arg val "$VALUE" '.[$key] | contains([$val])' "$OUTPUT_FILE")
-                    else
-                        IN_ARRAY=$(jq --arg key "$KEY" --argjson val "$VALUE" '.[$key] | contains([$val])' "$OUTPUT_FILE")
-                    fi
-                    
-                    if [ "$IN_ARRAY" = "true" ]; then
-                        echo -e "${BLUE}  Kept: ${NC}$KEY += $VALUE ${YELLOW}(already in array)${NC}"
-                    else
-                        # Add to existing array
-                        if [ "$VALUE_TYPE" = "string" ]; then
-                            jq --arg key "$KEY" --arg val "$VALUE" '.[$key] += [$val]' "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
-                        else
-                            jq --arg key "$KEY" --argjson val "$VALUE" '.[$key] += [$val]' "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
-                        fi
-                        mv "${OUTPUT_FILE}.tmp" "$OUTPUT_FILE"
-                        UPDATED_COUNT=$((UPDATED_COUNT + 1))
-                        echo -e "${GREEN}  Updated: ${NC}$KEY += $VALUE ${YELLOW}(added to array)${NC}"
-                    fi
-                else
-                    # Convert to array with both values
-                    if [ "$VALUE_TYPE" = "string" ]; then
-                        jq --arg key "$KEY" --arg val "$VALUE" '.[$key] = [.[$key], $val]' "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
-                    else
-                        jq --arg key "$KEY" --argjson val "$VALUE" '.[$key] = [.[$key], $val]' "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
-                    fi
-                    mv "${OUTPUT_FILE}.tmp" "$OUTPUT_FILE"
-                    UPDATED_COUNT=$((UPDATED_COUNT + 1))
-                    echo -e "${GREEN}  Merged: ${NC}$KEY = [existing, $VALUE] ${YELLOW}(created array)${NC}"
-                fi
-            fi
-        else
-            # Key doesn't exist - add new key-value pair
+        if [ -z "$PATHS" ]; then
+            # Key doesn't exist anywhere - add to root level
             if [[ "$VALUE" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
                 jq --arg key "$KEY" --argjson val "$VALUE" '. + {($key): $val}' "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
             else
@@ -172,7 +122,87 @@ while IFS= read -r line || [ -n "$line" ]; do
             fi
             mv "${OUTPUT_FILE}.tmp" "$OUTPUT_FILE"
             MERGED_COUNT=$((MERGED_COUNT + 1))
-            echo -e "${BLUE}  Added: ${NC}$KEY = $VALUE"
+            echo -e "${BLUE}  Added (root): ${NC}$KEY = $VALUE"
+        else
+            # Key exists in one or more locations - merge at each location
+            while IFS= read -r path; do
+                if [ -z "$path" ]; then
+                    continue
+                fi
+                
+                # Build jq path expression
+                if [ "$path" = "" ]; then
+                    JQ_PATH="."
+                else
+                    JQ_PATH=$(echo ".$path" | sed 's/\.\([0-9]\+\)/[\1]/g')
+                fi
+                
+                # Get existing value at this path
+                EXISTING_VALUE=$(jq -r --arg key "$KEY" "${JQ_PATH}.\$key" "$OUTPUT_FILE" 2>/dev/null)
+                
+                # Determine if new value is numeric
+                if [[ "$VALUE" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+                    VALUE_TYPE="number"
+                else
+                    VALUE_TYPE="string"
+                fi
+                
+                # Check if existing value equals new value
+                if [ "$VALUE_TYPE" = "string" ]; then
+                    if [ "$EXISTING_VALUE" = "$VALUE" ]; then
+                        VALUE_MATCH="true"
+                    else
+                        VALUE_MATCH="false"
+                    fi
+                else
+                    if [ "$EXISTING_VALUE" = "$VALUE" ]; then
+                        VALUE_MATCH="true"
+                    else
+                        VALUE_MATCH="false"
+                    fi
+                fi
+                
+                if [ "$VALUE_MATCH" = "true" ]; then
+                    # Same value - keep single value
+                    echo -e "${BLUE}  Kept: ${NC}${path:+$path.}$KEY = $VALUE ${YELLOW}(same value)${NC}"
+                else
+                    # Different value - check if already an array
+                    EXISTING_TYPE=$(jq -r --arg key "$KEY" "${JQ_PATH}.\$key | type" "$OUTPUT_FILE" 2>/dev/null)
+                    
+                    if [ "$EXISTING_TYPE" = "array" ]; then
+                        # Already an array - check if value exists
+                        if [ "$VALUE_TYPE" = "string" ]; then
+                            IN_ARRAY=$(jq --arg key "$KEY" --arg val "$VALUE" "${JQ_PATH}.\$key | contains([\$val])" "$OUTPUT_FILE")
+                        else
+                            IN_ARRAY=$(jq --arg key "$KEY" --argjson val "$VALUE" "${JQ_PATH}.\$key | contains([\$val])" "$OUTPUT_FILE")
+                        fi
+                        
+                        if [ "$IN_ARRAY" = "true" ]; then
+                            echo -e "${BLUE}  Kept: ${NC}${path:+$path.}$KEY += $VALUE ${YELLOW}(already in array)${NC}"
+                        else
+                            # Add to existing array
+                            if [ "$VALUE_TYPE" = "string" ]; then
+                                jq --arg key "$KEY" --arg val "$VALUE" "${JQ_PATH}.\$key += [\$val]" "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
+                            else
+                                jq --arg key "$KEY" --argjson val "$VALUE" "${JQ_PATH}.\$key += [\$val]" "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
+                            fi
+                            mv "${OUTPUT_FILE}.tmp" "$OUTPUT_FILE"
+                            UPDATED_COUNT=$((UPDATED_COUNT + 1))
+                            echo -e "${GREEN}  Updated: ${NC}${path:+$path.}$KEY += $VALUE ${YELLOW}(added to array)${NC}"
+                        fi
+                    else
+                        # Convert to array with both values
+                        if [ "$VALUE_TYPE" = "string" ]; then
+                            jq --arg key "$KEY" --arg val "$VALUE" "${JQ_PATH}.\$key = [${JQ_PATH}.\$key, \$val]" "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
+                        else
+                            jq --arg key "$KEY" --argjson val "$VALUE" "${JQ_PATH}.\$key = [${JQ_PATH}.\$key, \$val]" "$OUTPUT_FILE" > "${OUTPUT_FILE}.tmp"
+                        fi
+                        mv "${OUTPUT_FILE}.tmp" "$OUTPUT_FILE"
+                        UPDATED_COUNT=$((UPDATED_COUNT + 1))
+                        echo -e "${GREEN}  Merged: ${NC}${path:+$path.}$KEY = [$EXISTING_VALUE, $VALUE] ${YELLOW}(created array)${NC}"
+                    fi
+                fi
+            done <<< "$PATHS"
         fi
     else
         echo -e "${YELLOW}  Warning: Skipping invalid line $LINE_COUNT (no comma found): $line${NC}"
@@ -186,4 +216,4 @@ echo -e "New keys added: ${GREEN}$MERGED_COUNT${NC}"
 echo -e "Existing keys merged: ${GREEN}$UPDATED_COUNT${NC}"
 echo ""
 echo -e "Result preview:"
-jq '.' "$OUTPUT_FILE" | head -n 30
+jq '.' "$OUTPUT_FILE" | head -n 40
