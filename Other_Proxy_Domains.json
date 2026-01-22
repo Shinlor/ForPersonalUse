@@ -25,6 +25,7 @@
     },
     {
       "domain_suffix": [
+        "openstreetmap.org",
         "leafletjs.com",
         "pornhub.com",
         "javbus.com",
@@ -931,5 +932,6 @@
   ],
   "version": 2
 }
+
 
 
