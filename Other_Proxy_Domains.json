@@ -18,7 +18,9 @@
         "google",
         "recaptcha",
         "youtube",
-        "godaddy"
+        "godaddy",
+        "claude",
+        "facebook"
       ]
     },
     {
@@ -928,3 +930,4 @@
   ],
   "version": 2
 }
+
