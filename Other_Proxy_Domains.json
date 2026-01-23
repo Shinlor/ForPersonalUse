@@ -25,6 +25,13 @@
     },
     {
       "domain_suffix": [
+                                    "mypikpak.com",
+                            "google.com",
+                            "idcflare.com",
+                            "itch.io",
+                            "gofile.io",
+                            "mega.nz",
+                            "greasyfork.org",
         "openstreetmap.org",
         "leafletjs.com",
         "pornhub.com",
@@ -932,6 +939,7 @@
   ],
   "version": 2
 }
+
 
 
 
