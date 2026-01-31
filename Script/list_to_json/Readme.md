@@ -1,6 +1,6 @@
 # List to JSON 转换工具
 
-这是一个将 list 格式的规则文件转换为 JSON 格式的 Python 脚本。
+这是一个将 list 格式的规则文件转换为 JSON 格式规则文件的 Python 脚本。
 
 ## 功能特点
 
