@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "cdn.usefathom.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "claude"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "anthropic.com",
+        "claude.ai",
+        "claude.com"
+      ]
+    }
+  ],
+  "version": 2
+}
