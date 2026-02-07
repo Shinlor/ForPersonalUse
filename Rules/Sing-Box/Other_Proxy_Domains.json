@@ -1,4 +1,3 @@
-
 {
   "rules": [
     {
@@ -22,31 +21,31 @@
         "godaddy",
         "claude",
         "facebook",
-                                    "gemini",
-                            "deepmind",
-                            "google",
-                            "copilot",
-                            "payoneer",
-                            "apkpure"
+        "gemini",
+        "deepmind",
+        "google",
+        "copilot",
+        "payoneer",
+        "apkpure"
       ]
     },
     {
       "domain_suffix": [
-                                    "mypikpak.com",
-                            "google.com",
-                            "idcflare.com",
-                            "itch.io",
-                            "gofile.io",
-                            "mega.nz",
-                            "greasyfork.org",
-                            "anthropic.com",
-                            "intercom.io",
-                            "proxifier.com",
-                            "linux.do",
-                            "events.data.microsoft.com",
-                            "copilot.microsoft.com",
-                            "edgeservices.bing.com",
-                            "openrouter.ai",
+        "mypikpak.com",
+        "google.com",
+        "idcflare.com",
+        "itch.io",
+        "gofile.io",
+        "mega.nz",
+        "greasyfork.org",
+        "anthropic.com",
+        "intercom.io",
+        "proxifier.com",
+        "linux.do",
+        "events.data.microsoft.com",
+        "copilot.microsoft.com",
+        "edgeservices.bing.com",
+        "openrouter.ai",
         "idcflare.com",
         "itch.io",
         "gofile.io",
