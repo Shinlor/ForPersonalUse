@@ -1,0 +1,17 @@
+{
+  "rules": [
+    {
+      "domain_keyword": [
+        "copilot"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "events.data.microsoft.com",
+        "copilot.microsoft.com",
+        "edgeservices.bing.com"
+      ]
+    }
+  ],
+  "version": 2
+}
