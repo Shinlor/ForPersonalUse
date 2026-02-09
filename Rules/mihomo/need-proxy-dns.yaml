@@ -1,6 +1,6 @@
 # NAME: Merged Proxy DNS Rules
 # AUTHOR: Auto-generated
-# TOTAL FILES: 12
+# TOTAL FILES: 13
 # SOURCE: YouTube.yaml
 # SOURCE: GitHub.yaml
 # SOURCE: Google.yaml
@@ -13,6 +13,7 @@
 # SOURCE: Facebook.yaml
 # SOURCE: GoogleEarth.yaml
 # SOURCE: Copilot.yaml
+# SOURCE: Gemini.yaml
 #
 # Rule Statistics:
 # DOMAIN: 17
