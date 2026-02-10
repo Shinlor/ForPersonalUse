@@ -21,8 +21,7 @@ jobs:
       - name: Install dependencies
         if: hashFiles('requirements.txt') != ''
         run: |
-          pip install -r Script/requirements.txt
-
+          python -m pip install -r Script/requirements.txt
       - name: Run Python scripts
         run: |
           # 在这里按顺序运行你的脚本
