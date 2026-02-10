@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - "Rules/Surge/Other_Proxy_Domains.list"
+      - "Script/downloadurl.list"
   workflow_dispatch:
 
 jobs:
