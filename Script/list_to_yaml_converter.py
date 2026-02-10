@@ -399,7 +399,7 @@ def main():
         print(f"\n📊 找到 {len(urls)} 个下载链接\n")
         
         # 创建输出目录
-        output_dir = './converted_rules'
+        output_dir = './Rules/mihomo'
         os.makedirs(output_dir, exist_ok=True)
         print(f"📁 输出目录: {output_dir}\n")
         
