@@ -1,7 +1,12 @@
 name: Auto Convert
 
 on:
-  workflow_dispatch:  # 手动触发
+  schedule:
+    - cron: "0 18 * * *"   
+  push:
+    paths:
+      - "Rules/Surge/Other_Proxy_Domains.list"
+  workflow_dispatch:
 
 jobs:
   run-and-push:
