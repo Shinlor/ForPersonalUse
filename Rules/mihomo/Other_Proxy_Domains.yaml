@@ -3,8 +3,8 @@
 # REPO: 
 # UPDATED: 
 # DOMAIN-KEYWORD: 19
-# DOMAIN-SUFFIX: 49
-# TOTAL: 68
+# DOMAIN-SUFFIX: 50
+# TOTAL: 69
 payload:
   - DOMAIN-SUFFIX,mypikpak.com
   - DOMAIN-SUFFIX,idcflare.com
@@ -22,6 +22,7 @@ payload:
   - DOMAIN-SUFFIX,openrouter.ai
   - DOMAIN-SUFFIX,openstreetmap.org
   - DOMAIN-SUFFIX,leafletjs.com
+  - DOMAIN-SUFFIX,jiao.se
   - DOMAIN-SUFFIX,pornhub.com
   - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,pikpak.me

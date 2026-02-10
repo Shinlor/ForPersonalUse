@@ -18,11 +18,11 @@
 # Rule Statistics:
 # DOMAIN: 17
 # DOMAIN-KEYWORD: 32
-# DOMAIN-SUFFIX: 1602
+# DOMAIN-SUFFIX: 1603
 # IP-ASN: 6
 # IP-CIDR: 33
 # IP-CIDR6: 5
-# TOTAL: 1695
+# TOTAL: 1696
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1067,6 +1067,7 @@ payload:
   - DOMAIN-SUFFIX,openrouter.ai
   - DOMAIN-SUFFIX,openstreetmap.org
   - DOMAIN-SUFFIX,leafletjs.com
+  - DOMAIN-SUFFIX,jiao.se
   - DOMAIN-SUFFIX,pornhub.com
   - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,pikpak.me
