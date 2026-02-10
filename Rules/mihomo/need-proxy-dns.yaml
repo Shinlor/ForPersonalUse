@@ -19,11 +19,11 @@
 # Rule Statistics:
 # DOMAIN: 17
 # DOMAIN-KEYWORD: 33
-# DOMAIN-SUFFIX: 1855
+# DOMAIN-SUFFIX: 1856
 # IP-ASN: 6
 # IP-CIDR: 33
 # IP-CIDR6: 5
-# TOTAL: 1949
+# TOTAL: 1950
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1053,6 +1053,7 @@ payload:
   - IP-ASN,62014
   - IP-ASN,62041
   - DOMAIN-SUFFIX,pages.dev
+  - DOMAIN-SUFFIX,drtuber.com
   - DOMAIN-SUFFIX,91cg1.com
   - DOMAIN-SUFFIX,51cg1.com
   - DOMAIN-SUFFIX,hl365.com
