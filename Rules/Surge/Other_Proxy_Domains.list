@@ -14,6 +14,7 @@ DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,openrouter.ai
 DOMAIN-SUFFIX,openstreetmap.org
 DOMAIN-SUFFIX,leafletjs.com
+DOMAIN-SUFFIX,jiao.se
 DOMAIN-SUFFIX,pornhub.com
 DOMAIN-SUFFIX,javbus.com
 DOMAIN-SUFFIX,pikpak.me
@@ -66,3 +67,4 @@ DOMAIN-KEYWORD,deepmind
 DOMAIN-KEYWORD,copilot
 DOMAIN-KEYWORD,payoneer
 DOMAIN-KEYWORD,apkpure
+
