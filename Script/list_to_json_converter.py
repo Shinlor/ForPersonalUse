@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 
 # 默认的downloadurl.list下载地址
-DEFAULT_DOWNLOADURL = "https://raw.githubusercontent.com/Shinlor/ForPersonalUse/refs/heads/main/downloadurl.list"
+DEFAULT_DOWNLOADURL = "https://raw.githubusercontent.com/Shinlor/ForPersonalUse/refs/heads/main/Script/downloadurl.list"
 
 # 输出目录
 OUTPUT_DIR = "./Rules/Sing-Box"
