@@ -243,7 +243,7 @@ def main():
     
     # 检查downloadurl.txt是否存在，如果不存在则从GitHub下载
     if not os.path.exists(download_urls_file):
-        default_url = "https://raw.githubusercontent.com/Shinlor/ForPersonalUse/refs/heads/main/downloadurl.list"
+        default_url = "https://raw.githubusercontent.com/Shinlor/ForPersonalUse/refs/heads/main/Script/downloadurl.list"
         print(f"⚠ 未找到文件 {download_urls_file}")
         print(f"  将从默认地址下载: {default_url}")
         downloaded_file = download_or_load_list_file(default_url, save_dir=".")
