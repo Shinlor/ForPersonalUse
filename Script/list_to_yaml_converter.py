@@ -381,7 +381,7 @@ def process_url(url: str, output_dir: str = '.', keep_list: bool = False) -> Tup
 def main():
     """主函数"""
     # 下载URL列表的地址
-    download_list_url = "https://raw.githubusercontent.com/Shinlor/ForPersonalUse/refs/heads/main/downloadurl.list"
+    download_list_url = "https://raw.githubusercontent.com/Shinlor/ForPersonalUse/refs/heads/main/Script/downloadurl.list"
     
     print("="*60)
     print("List to YAML 转换工具")
