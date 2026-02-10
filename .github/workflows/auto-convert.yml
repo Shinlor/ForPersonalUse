@@ -21,12 +21,13 @@ jobs:
       - name: Install dependencies
         if: hashFiles('Script/requirements.txt') != ''
         run: |
-          pip install -r Script/requirements.txt
+          python -m pip install -r Script/requirements.txt
       - name: Run Python scripts
         run: |
           # 在这里按顺序运行你的脚本
           python Script/list_to_yaml_converter.py
           python Script/list_to_json_converter.py
+          python Script/domain_merge_optimizer.py
           
           # 比如这些脚本会生成 output/ 目录里的文件
 
