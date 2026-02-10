@@ -342,6 +342,18 @@ def main():
             print(f"\n✓ 已清理临时文件: {downloaded_url_file}")
         except Exception as e:
             print(f"\n⚠ 清理临时文件失败: {e}")
+    
+    # 新增：清理 downloads 目录
+    downloads_dir = "./downloads"
+    if os.path.exists(downloads_dir):
+        try:
+            import shutil
+            shutil.rmtree(downloads_dir)
+            print(f"✓ 已删除目录: {downloads_dir}")
+        except Exception as e:
+            print(f"⚠ 删除目录失败: {e}")
+
+
 
 
 if __name__ == "__main__":
