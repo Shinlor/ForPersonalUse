@@ -27,6 +27,7 @@ jobs:
         run: |
           # 在这里按顺序运行你的脚本
           python Script/list_to_yaml_converter.py
+          python Script/list_to_json_converter.py
           
           # 比如这些脚本会生成 output/ 目录里的文件
 
