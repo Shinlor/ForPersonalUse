@@ -3,9 +3,13 @@
 # REPO: 
 # UPDATED: 
 # DOMAIN-KEYWORD: 19
-# DOMAIN-SUFFIX: 51
-# TOTAL: 70
+# DOMAIN-SUFFIX: 55
+# TOTAL: 74
 payload:
+  - DOMAIN-SUFFIX,91cg1.com
+  - DOMAIN-SUFFIX,51cg1.com
+  - DOMAIN-SUFFIX,hl365.com
+  - DOMAIN-SUFFIX,heiliao.com
   - DOMAIN-SUFFIX,ixxx.com
   - DOMAIN-SUFFIX,mypikpak.com
   - DOMAIN-SUFFIX,idcflare.com
