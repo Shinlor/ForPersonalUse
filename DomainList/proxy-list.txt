@@ -1669,7 +1669,9 @@ anexia-engine.com
 anexia-it.com
 anexia.at
 anexia.com
+anfutong.cn
 anfutong.com
+anfutong.com.cn
 angel-gto.com
 angela-merkel.de
 angelbeats.jp
@@ -3306,7 +3308,9 @@ begin-trade.com
 behance.net
 behindkink.com
 behindthescreenz.com
+beibao.cn
 beibao.com
+beibao.com.cn
 beijing1989.com
 beijing2022.art
 beijingnike.com
@@ -17886,6 +17890,7 @@ paypal-mainstreet.net
 paypal-marketing.com
 paypal-media.com
 paypal-merchantloyalty.com
+paypal-mktg.com
 paypal-mobilemoney.com
 paypal-network.org
 paypal-notice.com
@@ -17928,17 +17933,21 @@ paypal-team.com
 paypal-viewpoints.net
 paypal.ca
 paypal.com
+paypal.com.cn
 paypal.com.hk
 paypal.com.sg
 paypal.hk
 paypal.info
 paypal.jp
 paypal.me
+paypal.net.cn
+paypal.org.cn
 paypal.so
 paypal.us
 paypalbeacon.com
 paypalbenefits.com
 paypalbrasil.com
+paypalcommunity.cn
 paypalcommunity.com
 paypalcommunity.net
 paypalcommunity.org
@@ -17946,7 +17955,9 @@ paypalcorp.com
 paypalcredit.com
 paypalcreditcard.com
 paypalgivingfund.org
+paypalhere.cn
 paypalhere.com
+paypalhere.com.cn
 paypalhere.info
 paypalhere.net
 paypalhere.org
@@ -25306,6 +25317,7 @@ xn--9kr7l.com
 xn--9pr62r24a.com
 xn--9trs65b.com
 xn--av-o44ep1d.com
+xn--bnq297cix3a.cn
 xn--cck4d8b3009a.com
 xn--czq75pvv1aj5c.org
 xn--d1acpjx3f.xn--p1ai
@@ -25400,6 +25412,7 @@ xomfsp.xyz
 xoom-experience.com
 xoom.com
 xoom.io
+xoom.net.cn
 xoom.us
 xoomcom.com
 xoteens.com
