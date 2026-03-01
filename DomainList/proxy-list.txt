@@ -1097,6 +1097,7 @@ ahvideosexe.com
 ahxxx.club
 ai-sdk.dev
 ai.binwang.me
+ai.com
 ai.dev
 ai.studio
 ai7995.site
@@ -1276,6 +1277,7 @@ alfera.com.my
 alfera.in
 alfera.my
 alforattv.net
+algolia.net
 alhayat.com
 alhs.link
 alhs.xyz
@@ -1791,6 +1793,7 @@ api.imem.app
 api.news
 api.palworldgame.com
 api.pureapk.com
+api.statsig.com
 api.swiftgram.app
 api.viu.now.com
 apiary.io
@@ -4543,6 +4546,7 @@ bronto.com
 brookings.edu
 brotli.org
 brourou.com
+browser-intake-datadoghq.com
 browser.kagi.com
 browser.run
 browserleaks.com
@@ -5225,6 +5229,7 @@ charticulator.com
 chat.com
 chat.gle
 chat.lmsys.org
+chat.openai.com.cdn.cloudflare.net
 chatango.com
 chatgpt.com
 chatgpt.livekit.cloud
@@ -5581,6 +5586,7 @@ click-url.com
 clickedu.co.uk
 clickserve.cc-dt.com
 clickserver.googleads.com
+client-api.arkoselabs.com
 client-teamviewer-com.trafficmanager.net
 climate-server.com
 clinica-tibet.ru
@@ -8200,6 +8206,7 @@ evanottyvideos.com
 evchk.wikia.com
 evemodels.com
 events.data.microsoft.com
+events.statsigapi.net
 eventsinfocus.org
 everia.club
 everipedia.org
@@ -8795,6 +8802,7 @@ feacbooke.com
 feacebook.com
 feanonlinear.com
 featurecam.com
+featuregates.org
 fecbbok.com
 fecbooc.com
 fecbook.com
@@ -8879,7 +8887,6 @@ fightforux.com
 figma.com
 figprayer.com
 fileflyer.com
-files.oaiusercontent.com
 fileserve.com
 filesmonster.vip
 filesor.com
@@ -13950,6 +13957,7 @@ latinacoochies.com
 latinmommas.com
 latintubeporn.com
 latticedata.com
+launchdarkly.com
 launchpad.net
 launchpad.wang
 launchpadcontent.net
@@ -17288,6 +17296,7 @@ oauthz.com
 objectarx.com
 observable.net
 observechina.net
+observeit.net
 obsrvbl.com
 obutsumania.com
 obutu.com
@@ -17519,6 +17528,7 @@ op.gg
 op7979.com
 open.com.hk
 open.firstory.me
+openai-api.arkoselabs.com
 openai.com
 openaiapi-site.azureedge.net
 openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
@@ -20200,6 +20210,7 @@ seesmic.com
 seeurlpcl.com
 seevpn.com
 seezone.net
+segment.io
 sego8.cc
 sego8.co
 sego8.xyz
@@ -21429,6 +21440,7 @@ static-economist.com
 static-hamivideo.cdn.hinet.net
 static-nike.com
 static-verizon.com
+static.cloudflareinsights.com
 static.fun
 static.pocketcasts.com
 static.shemalez.com
