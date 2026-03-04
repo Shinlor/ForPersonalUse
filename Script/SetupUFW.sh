@@ -26,20 +26,23 @@ echo "[2/5] 锁定 ufw 防止被自动卸载..."
 apt-mark hold ufw
 echo "ufw 已锁定"
 
-# 开启 IP 转发
-echo "[3/5] 开启 IP 转发..."
-sed -i 's|#*net/ipv4/ip_forward=1|net/ipv4/ip_forward=1|' /etc/ufw/sysctl.conf
-grep -q "^net/ipv4/ip_forward=1" /etc/ufw/sysctl.conf || echo "net/ipv4/ip_forward=1" >> /etc/ufw/sysctl.conf
-echo "IP 转发已开启"
-
-# 重置并设置默认策略
-echo "[4/5] 重置 ufw 规则并设置默认策略..."
+# 重置并设置默认策略（先 reset，避免覆盖后续写入的配置）
+echo "[3/5] 重置 ufw 规则并设置默认策略..."
 ufw --force reset
 ufw default deny incoming
 ufw default allow outgoing
 
-# 写入 NAT 规则到 before.rules（reset 之后写入，避免被覆盖）
+# 开启 IP 转发（必须在 reset 之后，否则 sysctl.conf 会被还原）
+echo "[4/5] 开启 IP 转发并写入 NAT 规则..."
+sed -i 's|^#*net/ipv4/ip_forward=1|net/ipv4/ip_forward=1|' /etc/ufw/sysctl.conf
+grep -q "^net/ipv4/ip_forward=1" /etc/ufw/sysctl.conf || echo "net/ipv4/ip_forward=1" >> /etc/ufw/sysctl.conf
+echo "IP 转发已开启"
+
+# 写入 NAT 规则到 before.rules（必须在 reset 之后，否则会被还原）
 BEFORE_RULES="/etc/ufw/before.rules"
+# 先删除旧的 *nat 段，避免重复写入
+sed -i '/^\*nat/,/^COMMIT/d' "$BEFORE_RULES"
+# 写入新的 NAT 段
 sed -i '1s|^|*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p udp -m udp --dport 2001:2999 -j DNAT --to-destination :1030\n-A PREROUTING -p udp -m udp --dport 3001:3999 -j DNAT --to-destination :1040\nCOMMIT\n\n|' "$BEFORE_RULES"
 echo "NAT 规则已写入"
 
@@ -62,8 +65,8 @@ ufw allow 5050
 ufw allow 5858
 ufw allow 2000:3000/tcp
 ufw allow 2000:3000/udp
-ufw allow 2001:2999/udp
 ufw allow 3001:3999/udp
+ufw allow 3001:3999/tcp
 
 # 启用 ufw
 ufw --force enable
