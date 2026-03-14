@@ -21,10 +21,7 @@
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 34
 # DOMAIN-SUFFIX: 1879
-# IP-ASN: 7
-# IP-CIDR: 35
-# IP-CIDR6: 5
-# TOTAL: 1984
+# TOTAL: 1937
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -207,9 +204,6 @@ payload:
   - DOMAIN-SUFFIX,yt.be
   - DOMAIN-SUFFIX,ytimg.com
   - DOMAIN-KEYWORD,youtube
-  - IP-CIDR,172.110.32.0/21
-  - IP-CIDR,216.73.80.0/20
-  - IP-CIDR6,2620:120:e000::/40
   - DOMAIN-SUFFIX,atom.io
   - DOMAIN-SUFFIX,dependabot.com
   - DOMAIN-SUFFIX,ghcr.io
@@ -938,8 +932,6 @@ payload:
   - DOMAIN-KEYWORD,gmail
   - DOMAIN-KEYWORD,google
   - DOMAIN-KEYWORD,recaptcha
-  - IP-CIDR,173.194.0.0/16
-  - IP-CIDR,74.125.0.0/16
   - DOMAIN,ai.google.dev
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
   - DOMAIN,makersuite.google.com
@@ -1038,21 +1030,6 @@ payload:
   - DOMAIN-SUFFIX,tx.me
   - DOMAIN-SUFFIX,usercontent.dev
   - DOMAIN-KEYWORD,nicegram
-  - IP-CIDR,109.239.140.0/24
-  - IP-CIDR,139.59.210.98/32
-  - IP-CIDR,149.154.160.0/20
-  - IP-CIDR,196.55.216.167/32
-  - IP-CIDR,5.28.192.0/18
-  - IP-CIDR,91.108.0.0/16
-  - IP-CIDR6,2001:67c:4e8::/48
-  - IP-CIDR6,2001:b28:f23c::/47
-  - IP-CIDR6,2001:b28:f23f::/48
-  - IP-CIDR6,2a0a:f280::/29
-  - IP-ASN,211157
-  - IP-ASN,44907
-  - IP-ASN,59930
-  - IP-ASN,62014
-  - IP-ASN,62041
   - DOMAIN-SUFFIX,pages.dev
   - DOMAIN-SUFFIX,drtuber.com
   - DOMAIN-SUFFIX,91cg1.com
@@ -1690,30 +1667,6 @@ payload:
   - DOMAIN-SUFFIX,zuckerberg.com
   - DOMAIN-SUFFIX,zuckerberg.net
   - DOMAIN-KEYWORD,fbcdn
-  - IP-CIDR,108.168.176.192/26
-  - IP-CIDR,108.168.177.0/27
-  - IP-CIDR,108.168.180.96/27
-  - IP-CIDR,108.168.254.65/32
-  - IP-CIDR,108.168.255.224/32
-  - IP-CIDR,108.168.255.227/32
-  - IP-CIDR,108.177.8.0/21
-  - IP-CIDR,119.235.224.0/24
-  - IP-CIDR,119.235.232.0/24
-  - IP-CIDR,119.235.236.0/23
-  - IP-CIDR,129.134.0.0/17
-  - IP-CIDR,157.240.0.0/17
-  - IP-CIDR,169.45.248.118/32
-  - IP-CIDR,173.252.64.0/18
-  - IP-CIDR,3.123.36.126/32
-  - IP-CIDR,31.13.64.0/18
-  - IP-CIDR,35.157.215.84/32
-  - IP-CIDR,35.157.217.255/32
-  - IP-CIDR,52.58.209.134/32
-  - IP-CIDR,54.162.243.80/32
-  - IP-CIDR,54.173.34.141/32
-  - IP-CIDR,54.235.23.242/32
-  - IP-CIDR,54.93.124.31/32
-  - IP-ASN,32934
   - DOMAIN-SUFFIX,earth-pa.clients6.google.com
   - DOMAIN-SUFFIX,earth.google.com
   - DOMAIN-SUFFIX,kh.google.com
@@ -2008,6 +1961,3 @@ payload:
   - DOMAIN-SUFFIX,stripe.com
   - DOMAIN-SUFFIX,turn.livekit.cloud
   - DOMAIN-KEYWORD,openai
-  - IP-CIDR,24.199.123.28/32
-  - IP-CIDR,64.23.132.171/32
-  - IP-ASN,20473
