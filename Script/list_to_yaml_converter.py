@@ -252,6 +252,7 @@ def save_yaml_file(content: str, filename: str, output_dir: str = '.') -> str:
 def merge_yaml_files(yaml_contents: List[Tuple[str, str]], output_dir: str = '.') -> str:
     """
     合并多个YAML文件为一个
+    合并时只保留 DOMAIN-SUFFIX、DOMAIN、DOMAIN-KEYWORD 类型的规则
     
     Args:
         yaml_contents: [(文件名, YAML内容), ...] 列表
@@ -260,7 +261,10 @@ def merge_yaml_files(yaml_contents: List[Tuple[str, str]], output_dir: str = '.'
     Returns:
         合并后的文件路径
     """
-    print(f"\n🔗 合并所有YAML文件...")
+    # 合并文件中只保留这三种域名相关规则类型
+    MERGE_ALLOWED_RULE_TYPES = {'DOMAIN-SUFFIX', 'DOMAIN', 'DOMAIN-KEYWORD'}
+
+    print(f"\n🔗 合并所有YAML文件（仅保留 DOMAIN-SUFFIX / DOMAIN / DOMAIN-KEYWORD）...")
     
     merged_lines = []
     
@@ -293,13 +297,20 @@ def merge_yaml_files(yaml_contents: List[Tuple[str, str]], output_dir: str = '.'
             if stripped.startswith('- '):
                 rule = stripped[2:].strip()
                 
+                if not rule:
+                    continue
+                
+                # 只保留允许的规则类型
+                rule_type = rule.split(',')[0]
+                if rule_type not in MERGE_ALLOWED_RULE_TYPES:
+                    continue
+                
                 # 去重
-                if rule and rule not in seen_rules:
+                if rule not in seen_rules:
                     seen_rules.add(rule)
                     all_rules.append(rule)
                     
                     # 统计规则类型
-                    rule_type = rule.split(',')[0]
                     rule_stats[rule_type] = rule_stats.get(rule_type, 0) + 1
                     total_rules += 1
     
