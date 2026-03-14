@@ -222,12 +222,11 @@ def merge_json_files(json_files, output_path, version=2):
         "version": version
     }
     
-    # 初始化合并数据结构（包含IP-CIDR）
+    # 初始化合并数据结构（仅保留域名相关规则，不含IP-CIDR）
     merged_data = {
         "domain": [],
         "domain_keyword": [],
         "domain_suffix": [],
-        "ip_cidr": []
     }
     
     for json_file in json_files:
@@ -235,7 +234,7 @@ def merge_json_files(json_files, output_path, version=2):
             with open(json_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 
-            # 合并各个规则类型（包含IP-CIDR）
+            # 合并各个规则类型（仅 DOMAIN / DOMAIN-KEYWORD / DOMAIN-SUFFIX）
             if "rules" in data:
                 for rule in data["rules"]:
                     if "domain" in rule:
@@ -244,8 +243,6 @@ def merge_json_files(json_files, output_path, version=2):
                         merged_data["domain_keyword"].extend(rule["domain_keyword"])
                     if "domain_suffix" in rule:
                         merged_data["domain_suffix"].extend(rule["domain_suffix"])
-                    if "ip_cidr" in rule:
-                        merged_data["ip_cidr"].extend(rule["ip_cidr"])
         except Exception as e:
             print(f"警告: 读取 {json_file} 失败 - {e}")
             continue
@@ -254,17 +251,14 @@ def merge_json_files(json_files, output_path, version=2):
     merged_data["domain"] = list(set(merged_data["domain"]))
     merged_data["domain_keyword"] = list(set(merged_data["domain_keyword"]))
     merged_data["domain_suffix"] = list(set(merged_data["domain_suffix"]))
-    merged_data["ip_cidr"] = list(set(merged_data["ip_cidr"]))
     
-    # 构建最终的JSON结构（包含所有规则类型）
+    # 构建最终的JSON结构（仅域名规则）
     if merged_data["domain"]:
         merged_result["rules"].append({"domain": merged_data["domain"]})
     if merged_data["domain_keyword"]:
         merged_result["rules"].append({"domain_keyword": merged_data["domain_keyword"]})
     if merged_data["domain_suffix"]:
         merged_result["rules"].append({"domain_suffix": merged_data["domain_suffix"]})
-    if merged_data["ip_cidr"]:
-        merged_result["rules"].append({"ip_cidr": merged_data["ip_cidr"]})
     
     # 写入合并后的文件
     try:
@@ -274,14 +268,12 @@ def merge_json_files(json_files, output_path, version=2):
         total_domain = len(merged_data["domain"])
         total_keyword = len(merged_data["domain_keyword"])
         total_suffix = len(merged_data["domain_suffix"])
-        total_ip = len(merged_data["ip_cidr"])
         
         print(f"\n合并统计:")
         print(f"  - DOMAIN: {total_domain} 条")
         print(f"  - DOMAIN-KEYWORD: {total_keyword} 条")
         print(f"  - DOMAIN-SUFFIX: {total_suffix} 条")
-        print(f"  - IP-CIDR: {total_ip} 条")
-        print(f"  - 总计: {total_domain + total_keyword + total_suffix + total_ip} 条")
+        print(f"  - 总计: {total_domain + total_keyword + total_suffix} 条")
         print(f"\n成功: 已生成合并文件 {output_path}")
         return True
     except Exception as e:
