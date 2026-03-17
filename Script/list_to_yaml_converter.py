@@ -21,8 +21,7 @@ SUPPORTED_RULE_TYPES = {
     'IP-CIDR6',
     'DOMAIN',
     'DOMAIN-SET',
-    'GEOIP',
-    'IP-ASN',
+    'GEOIP',    
 }
 
 # 不支持的规则类型（需要过滤掉）
@@ -30,6 +29,7 @@ UNSUPPORTED_RULE_TYPES = {
     'USER-AGENT',
     'URL-REGEX',
     'PROCESS-NAME',
+    'IP-ASN',
 }
 
 
