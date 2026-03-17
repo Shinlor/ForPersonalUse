@@ -20,8 +20,8 @@
 # Rule Statistics:
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 34
-# DOMAIN-SUFFIX: 1879
-# TOTAL: 1937
+# DOMAIN-SUFFIX: 1880
+# TOTAL: 1938
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1080,6 +1080,7 @@ payload:
   - DOMAIN-SUFFIX,monica.im
   - DOMAIN-SUFFIX,phncdn.com
   - DOMAIN-SUFFIX,dpornhub.com
+  - DOMAIN-SUFFIX,comodo.com
   - DOMAIN-KEYWORD,godaddy
   - DOMAIN-KEYWORD,sagernet.org
   - DOMAIN-KEYWORD,poe.com
