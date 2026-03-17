@@ -6,7 +6,7 @@
 # DOMAIN-SUFFIX: 22
 # IP-CIDR: 6
 # IP-CIDR6: 4
-# TOTAL: 40
+# TOTAL: 35
 payload:
   - DOMAIN,api.imem.app
   - DOMAIN,api.swiftgram.app
@@ -43,8 +43,3 @@ payload:
   - IP-CIDR6,2001:b28:f23c::/47
   - IP-CIDR6,2001:b28:f23f::/48
   - IP-CIDR6,2a0a:f280::/29
-  - IP-ASN,211157
-  - IP-ASN,44907
-  - IP-ASN,59930
-  - IP-ASN,62014
-  - IP-ASN,62041
