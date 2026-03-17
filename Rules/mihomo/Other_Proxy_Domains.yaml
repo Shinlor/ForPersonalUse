@@ -3,8 +3,8 @@
 # REPO: 
 # UPDATED: 
 # DOMAIN-KEYWORD: 19
-# DOMAIN-SUFFIX: 57
-# TOTAL: 76
+# DOMAIN-SUFFIX: 56
+# TOTAL: 75
 payload:
   - DOMAIN-SUFFIX,pages.dev
   - DOMAIN-SUFFIX,drtuber.com
@@ -19,7 +19,6 @@ payload:
   - DOMAIN-SUFFIX,gofile.io
   - DOMAIN-SUFFIX,mega.nz
   - DOMAIN-SUFFIX,greasyfork.org
-  - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,proxifier.com
   - DOMAIN-SUFFIX,linux.do

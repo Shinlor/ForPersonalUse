@@ -20,8 +20,8 @@
 # Rule Statistics:
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 34
-# DOMAIN-SUFFIX: 1880
-# TOTAL: 1938
+# DOMAIN-SUFFIX: 1879
+# TOTAL: 1937
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1043,7 +1043,6 @@ payload:
   - DOMAIN-SUFFIX,gofile.io
   - DOMAIN-SUFFIX,mega.nz
   - DOMAIN-SUFFIX,greasyfork.org
-  - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,intercom.io
   - DOMAIN-SUFFIX,proxifier.com
   - DOMAIN-SUFFIX,linux.do
