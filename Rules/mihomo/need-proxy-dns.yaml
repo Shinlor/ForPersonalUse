@@ -1,6 +1,6 @@
 # NAME: Merged Proxy DNS Rules
 # AUTHOR: Auto-generated
-# TOTAL FILES: 15
+# TOTAL FILES: 16
 # SOURCE: YouTube.yaml
 # SOURCE: GitHub.yaml
 # SOURCE: Google.yaml
@@ -16,12 +16,13 @@
 # SOURCE: Gemini.yaml
 # SOURCE: PayPal.yaml
 # SOURCE: OpenAI.yaml
+# SOURCE: OneDrive.yaml
 #
 # Rule Statistics:
 # DOMAIN: 24
-# DOMAIN-KEYWORD: 34
-# DOMAIN-SUFFIX: 1880
-# TOTAL: 1938
+# DOMAIN-KEYWORD: 37
+# DOMAIN-SUFFIX: 1893
+# TOTAL: 1954
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1962,3 +1963,19 @@ payload:
   - DOMAIN-SUFFIX,stripe.com
   - DOMAIN-SUFFIX,turn.livekit.cloud
   - DOMAIN-KEYWORD,openai
+  - DOMAIN-SUFFIX,1drv.com
+  - DOMAIN-SUFFIX,livefilestore.com
+  - DOMAIN-SUFFIX,microsoftpersonalcontent.com
+  - DOMAIN-SUFFIX,oneclient.sfx.ms
+  - DOMAIN-SUFFIX,onedrive.com
+  - DOMAIN-SUFFIX,onedrive.live.com
+  - DOMAIN-SUFFIX,photos.live.com
+  - DOMAIN-SUFFIX,sharepoint.com
+  - DOMAIN-SUFFIX,sharepointonline.com
+  - DOMAIN-SUFFIX,skydrive.wns.windows.com
+  - DOMAIN-SUFFIX,spoprod-a.akamaihd.net
+  - DOMAIN-SUFFIX,storage.live.com
+  - DOMAIN-SUFFIX,storage.msn.com
+  - DOMAIN-KEYWORD,1drv
+  - DOMAIN-KEYWORD,onedrive
+  - DOMAIN-KEYWORD,skydrive
