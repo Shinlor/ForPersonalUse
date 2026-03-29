@@ -22,9 +22,9 @@
 #
 # Rule Statistics:
 # DOMAIN: 24
-# DOMAIN-KEYWORD: 38
+# DOMAIN-KEYWORD: 39
 # DOMAIN-SUFFIX: 1919
-# TOTAL: 1981
+# TOTAL: 1982
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1098,6 +1098,7 @@ payload:
   - DOMAIN-KEYWORD,copilot
   - DOMAIN-KEYWORD,payoneer
   - DOMAIN-KEYWORD,apkpure
+  - DOMAIN-KEYWORD,zaochenbao.com
   - DOMAIN,aod-dash-uk-live.akamaized.net
   - DOMAIN,aod-hls-uk-live.akamaized.net
   - DOMAIN,as-dash-uk-live.akamaized.net
