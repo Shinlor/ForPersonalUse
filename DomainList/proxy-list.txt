@@ -9858,6 +9858,7 @@ geeksquadprotectionplan.org
 geeksquadservices.org
 geeksquadwebroot.org
 geelongadvertiser.com.au
+geforce.cn
 geforce.co.kr
 geforce.co.uk
 geforce.com
@@ -10562,6 +10563,7 @@ gov.tw
 governmentengineer.com
 govforce.com
 gpstheseries.com
+gputechconf.cn
 gputechconf.co.kr
 gputechconf.com
 gputechconf.com.au
@@ -17207,11 +17209,13 @@ nutsvpn.work
 nuuporn.com
 nuuvem.com
 nuvid.com
+nvda.d2.sc.omtrdc.net
 nvdst.com
 nvidia.asia
 nvidia.at
 nvidia.be
 nvidia.ch
+nvidia.cn
 nvidia.co.at
 nvidia.co.in
 nvidia.co.jp
