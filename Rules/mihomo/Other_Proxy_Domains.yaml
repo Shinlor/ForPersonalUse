@@ -3,8 +3,8 @@
 # REPO: 
 # UPDATED: 
 # DOMAIN-KEYWORD: 20
-# DOMAIN-SUFFIX: 57
-# TOTAL: 77
+# DOMAIN-SUFFIX: 58
+# TOTAL: 78
 payload:
   - DOMAIN-SUFFIX,pages.dev
   - DOMAIN-SUFFIX,drtuber.com
@@ -83,3 +83,4 @@ payload:
   - DOMAIN-KEYWORD,payoneer
   - DOMAIN-KEYWORD,apkpure
   - DOMAIN-KEYWORD,zaochenbao.com
+  - DOMAIN-SUFFIX,perplexity.ai
