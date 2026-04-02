@@ -3,8 +3,8 @@
 # REPO: 
 # UPDATED: 
 # DOMAIN-KEYWORD: 21
-# DOMAIN-SUFFIX: 58
-# TOTAL: 79
+# DOMAIN-SUFFIX: 59
+# TOTAL: 80
 payload:
   - DOMAIN-SUFFIX,pages.dev
   - DOMAIN-SUFFIX,drtuber.com
@@ -33,6 +33,7 @@ payload:
   - DOMAIN-SUFFIX,javbus.com
   - DOMAIN-SUFFIX,pikpak.me
   - DOMAIN-SUFFIX,pikpakdrive.com
+  - DOMAIN-SUFFIX,pickpackapp.com
   - DOMAIN-SUFFIX,mypikpak.net
   - DOMAIN-SUFFIX,metacubex.one
   - DOMAIN-SUFFIX,docker.io
