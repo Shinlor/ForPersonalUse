@@ -24,8 +24,8 @@
 # Rule Statistics:
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 40
-# DOMAIN-SUFFIX: 1977
-# TOTAL: 2041
+# DOMAIN-SUFFIX: 1978
+# TOTAL: 2042
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1060,6 +1060,7 @@ payload:
   - DOMAIN-SUFFIX,docker.io
   - DOMAIN-SUFFIX,docker.com
   - DOMAIN-SUFFIX,iyf.tv
+  - DOMAIN-SUFFIX,pipecdn.vip
   - DOMAIN-SUFFIX,patreon.com
   - DOMAIN-SUFFIX,7-zip.org
   - DOMAIN-SUFFIX,bandwagonhost.com
