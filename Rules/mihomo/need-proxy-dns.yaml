@@ -1,6 +1,6 @@
 # NAME: Merged Proxy DNS Rules
 # AUTHOR: Auto-generated
-# TOTAL FILES: 19
+# TOTAL FILES: 20
 # SOURCE: YouTube.yaml
 # SOURCE: GitHub.yaml
 # SOURCE: Google.yaml
@@ -20,6 +20,7 @@
 # SOURCE: Twitter.yaml
 # SOURCE: Facebook.yaml
 # SOURCE: Nvidia.yaml
+# SOURCE: Twitter.yaml
 #
 # Rule Statistics:
 # DOMAIN: 24
