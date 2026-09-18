@@ -3,8 +3,8 @@
 # REPO: 
 # UPDATED: 
 # DOMAIN-KEYWORD: 21
-# DOMAIN-SUFFIX: 61
-# TOTAL: 82
+# DOMAIN-SUFFIX: 62
+# TOTAL: 83
 payload:
   - DOMAIN-SUFFIX,pages.dev
   - DOMAIN-SUFFIX,drtuber.com
@@ -88,3 +88,4 @@ payload:
   - DOMAIN-KEYWORD,pickpack
   - DOMAIN-KEYWORD,zaochenbao.com
   - DOMAIN-SUFFIX,perplexity.ai
+  - DOMAIN-SUFFIX,huangguoai.com
