@@ -25,8 +25,8 @@
 # Rule Statistics:
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 40
-# DOMAIN-SUFFIX: 1979
-# TOTAL: 2043
+# DOMAIN-SUFFIX: 1980
+# TOTAL: 2044
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -1100,6 +1100,7 @@ payload:
   - DOMAIN-KEYWORD,zaochenbao.com
   - DOMAIN-SUFFIX,perplexity.ai
   - DOMAIN-SUFFIX,huangguoai.com
+  - DOMAIN-SUFFIX,91porn.com
   - DOMAIN,aod-dash-uk-live.akamaized.net
   - DOMAIN,aod-hls-uk-live.akamaized.net
   - DOMAIN,as-dash-uk-live.akamaized.net
