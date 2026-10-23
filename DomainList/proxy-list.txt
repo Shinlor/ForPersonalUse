@@ -7124,6 +7124,7 @@ dorjeshugden.com
 doseofporn.com
 dot-mac.de
 dot.net
+dota2.com
 dota2.wmsj.cn
 dotcernpilot.info
 dotdeb.org
@@ -21483,6 +21484,7 @@ steamcloudsweden.blob.core.windows.net
 steamcommunity-a.akamaihd.net
 steamcommunity-a.akamaihd.net.edgesuite.net
 steamcommunity.com
+steamconnecttest.com
 steamcontent.com
 steamcontent.tnkjmec.com
 steamdb.info
@@ -23421,6 +23423,7 @@ vagrantup.com
 valeursactuelles.com
 valoryirene.com
 valuegb.com
+valve.net
 valvesoftware.com
 van001.com
 van698.com

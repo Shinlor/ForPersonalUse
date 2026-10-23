@@ -25,8 +25,8 @@
 # Rule Statistics:
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 40
-# DOMAIN-SUFFIX: 1980
-# TOTAL: 2044
+# DOMAIN-SUFFIX: 1983
+# TOTAL: 2047
 #
 payload:
   - DOMAIN-SUFFIX,ggpht.cn
@@ -955,6 +955,7 @@ payload:
   - DOMAIN-SUFFIX,csgo.wmsj.cn
   - DOMAIN-SUFFIX,dl.steam.clngaa.com
   - DOMAIN-SUFFIX,dl.steam.ksyna.com
+  - DOMAIN-SUFFIX,dota2.com
   - DOMAIN-SUFFIX,dota2.wmsj.cn
   - DOMAIN-SUFFIX,edge.steam-dns.top.comcast.net
   - DOMAIN-SUFFIX,f3b7q2p3.ssl.hwcdn.net
@@ -980,6 +981,7 @@ payload:
   - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
   - DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net
   - DOMAIN-SUFFIX,steamcommunity.com
+  - DOMAIN-SUFFIX,steamconnecttest.com
   - DOMAIN-SUFFIX,steamcontent.tnkjmec.com
   - DOMAIN-SUFFIX,steamdeck.com
   - DOMAIN-SUFFIX,steamgames.com
@@ -998,6 +1000,7 @@ payload:
   - DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
   - DOMAIN-SUFFIX,steamvideo-a.akamaihd.net
   - DOMAIN-SUFFIX,underlords.com
+  - DOMAIN-SUFFIX,valve.net
   - DOMAIN-SUFFIX,valvesoftware.com
   - DOMAIN-SUFFIX,wmsjsteam.com
   - DOMAIN-KEYWORD,steambroadcast
